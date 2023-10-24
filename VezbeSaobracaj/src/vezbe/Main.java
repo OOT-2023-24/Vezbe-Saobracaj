@@ -1,6 +1,7 @@
 package vezbe;
 
-import java.util.*;
+import geometry.Line;
+import geometry.Point;
 
 public class Main {
 	
@@ -63,24 +64,48 @@ public class Main {
 //		}
 		
 		//ZADATAK 3 - Prestupne godine
-		int godina = 2023;
-		for(; godina<=2100; godina+=4) {
-			if(godina == 2023) {
-				godina++;
-				System.out.println(godina);
-				continue;
-			}else if(godina%100==0) {
-				if(godina%400==0) {
-					System.out.println(godina);
-				}else {
-					continue;
-				}
-			}
-			else {
-				System.out.println(godina);
-			}
-		}
+//		int godina = 2023;
+//		for(; godina<=2100; godina+=4) {
+//			if(godina == 2023) {
+//				godina++;
+//				System.out.println(godina);
+//				continue;
+//			}else if(godina%100==0) {
+//				if(godina%400==0) {
+//					System.out.println(godina);
+//				}else {
+//					continue;
+//				}
+//			}
+//			else {
+//				System.out.println(godina);
+//			}
+//		}
 		
+		//VEZBE 3
+		Point p1 = new Point();
+//		System.out.println(p1);
+//		System.out.println(p1.x);
+		
+		p1.setX(20);
+		p1.setY(10);
+		
+		Point p2 = new Point();
+		p2.setX(10);
+		p2.setY(10);
+		
+//		System.out.println(p1.distance(p2));
+//		System.out.println(p1.distance(p1));
+		Line l1 = new Line();
+		System.out.println("Memorijska lokacija: " + l1);
+		System.out.println(l1.getStartPoint());
+		//System.out.println(l1.getStartPoint().getX());
+		
+		l1.setStartPoint(p1);
+		p1 = p2;
+		System.out.println(l1.getStartPoint().getX());
+		l1.setEndPoint(p2);
+		System.out.println(l1.length());
 		
 	}
 
