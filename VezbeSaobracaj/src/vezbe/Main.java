@@ -1,7 +1,9 @@
 package vezbe;
 
+import geometry.Circle;
 import geometry.Line;
 import geometry.Point;
+import geometry.Rectangle;
 
 public class Main {
 	
@@ -83,30 +85,44 @@ public class Main {
 //		}
 		
 		//VEZBE 3
-		Point p1 = new Point();
+//		Point p1 = new Point();
 //		System.out.println(p1);
 //		System.out.println(p1.x);
 		
-		p1.setX(20);
-		p1.setY(10);
-		
-		Point p2 = new Point();
-		p2.setX(10);
-		p2.setY(10);
+//		p1.setX(20);
+//		p1.setY(10);
+//		
+//		Point p2 = new Point();
+//		p2.setX(10);
+//		p2.setY(10);
 		
 //		System.out.println(p1.distance(p2));
 //		System.out.println(p1.distance(p1));
-		Line l1 = new Line();
-		System.out.println("Memorijska lokacija: " + l1);
-		System.out.println(l1.getStartPoint());
-		//System.out.println(l1.getStartPoint().getX());
+//		Line l1 = new Line();
+//		System.out.println("Memorijska lokacija: " + l1);
+//		System.out.println(l1.getStartPoint());
+//		//System.out.println(l1.getStartPoint().getX());
+//		
+//		l1.setStartPoint(p1);
+//		p1 = p2;
+//		System.out.println(l1.getStartPoint().getX());
+//		l1.setEndPoint(p2);
+//		System.out.println(l1.length());
 		
-		l1.setStartPoint(p1);
-		p1 = p2;
-		System.out.println(l1.getStartPoint().getX());
-		l1.setEndPoint(p2);
-		System.out.println(l1.length());
+		//VEZBE 4
+		Point p1 = new Point(10,10,true);
+		System.out.println("x: " + p1.getX() + ", y: " + p1.getY() +
+				", selected: " + p1.isSelected());
+		Point p2 = new Point(20,20,false);
+		Line l1 = new Line(p1,p2,false);
+		System.out.println(l1.getEndPoint().getX());
+		Rectangle r1 = new Rectangle(new Point(50,50), 30, 30);
+		Circle c1 = new Circle(new Point(25,25),40);
 		
+		System.out.println(p1.toString());
+		System.out.println(p1);
+		
+	
 	}
 
 }
