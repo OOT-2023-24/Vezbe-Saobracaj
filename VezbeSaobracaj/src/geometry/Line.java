@@ -38,6 +38,14 @@ public class Line {
 		return false;
 	}
 	
+	public boolean contains(int x, int y) {
+		if( length() - (startPoint.distance(new Point(x,y)) 
+				+ endPoint.distance(new Point(x,y))) <= 3) {
+			return true;
+		}
+		return false;
+	}
+	
 	public double length() {
 		return startPoint.distance(endPoint);
 	}

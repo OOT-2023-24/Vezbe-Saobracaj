@@ -46,6 +46,14 @@ public class Point {
 		return false;
 	}
 	
+	public boolean contains(int x, int y) {
+		if((x - this.x <= 3 && x-this.x >= -3) && 
+				(y - this.y <= 3 && y-this.y >= -3)) {
+			return true;
+		}
+		return false;
+	}
+	
 	public int getX() {
 		return x;
 	}

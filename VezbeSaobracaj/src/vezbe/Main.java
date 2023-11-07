@@ -1,6 +1,7 @@
 package vezbe;
 
 import geometry.Circle;
+import geometry.Donut;
 import geometry.Line;
 import geometry.Point;
 import geometry.Rectangle;
@@ -111,17 +112,21 @@ public class Main {
 		
 		//VEZBE 4
 		Point p1 = new Point(10,10,true);
-		System.out.println("x: " + p1.getX() + ", y: " + p1.getY() +
-				", selected: " + p1.isSelected());
+		//System.out.println("x: " + p1.getX() + ", y: " + p1.getY() +
+				//", selected: " + p1.isSelected());
 		Point p2 = new Point(20,20,false);
 		Line l1 = new Line(p1,p2,false);
-		System.out.println(l1.getEndPoint().getX());
+		//System.out.println(l1.getEndPoint().getX());
 		Rectangle r1 = new Rectangle(new Point(50,50), 30, 30);
 		Circle c1 = new Circle(new Point(25,25),40);
 		
-		System.out.println(p1.toString());
-		System.out.println(p1);
+		//System.out.println(p1.toString());
+		//System.out.println(p1);
+		// 13-10 = 3 && 7-10=-3
+		System.out.println(p1.contains(14, 7));
 		
+		Donut d1 = new Donut();
+		System.out.println(d1.isSelected());
 	
 	}
 
