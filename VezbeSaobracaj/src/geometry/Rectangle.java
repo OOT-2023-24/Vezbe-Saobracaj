@@ -1,33 +1,41 @@
 package geometry;
 
-public class Rectangle {
+import java.awt.Graphics;
+
+public class Rectangle extends Shape {
 
 	private Point upperLeft;
 	private int width;
-	private int heigth;
-	private boolean selected;
+	private int height;
 	
 	public Rectangle() {
 		
 	}
 	
-	public Rectangle(Point upperLeft, int width,int heigth) {
+	public Rectangle(Point upperLeft, int width,int height) {
 		this.upperLeft = upperLeft;
 		this.width = width;
-		this.heigth = heigth;
+		this.height = height;
 	}
 	
-	public Rectangle(Point upperLeft, int width,int heigth,boolean selected) {
-		this(upperLeft,width,heigth);
+	public Rectangle(Point upperLeft, int width,int height,boolean selected) {
+		this(upperLeft,width,height);
 		this.selected = selected;
 	}
 	
+	@Override
+	public void draw(Graphics g) {
+		g.drawRect(upperLeft.getX(), upperLeft.getY(), width, height);
+		
+	}
+	
+	
 	public int area() {
-		return heigth*width;
+		return height*width;
 	}
 	
 	public int circumference() {
-		return heigth*2 + width*2;
+		return height*2 + width*2;
 	}
 	
 	@Override
@@ -50,7 +58,7 @@ public class Rectangle {
 	}
 	
 	public boolean contains(int x, int y) {
-		if( (y <= upperLeft.getY() + heigth && y >= upperLeft.getY())
+		if( (y <= upperLeft.getY() + height && y >= upperLeft.getY())
 				&& (x <= upperLeft.getX() + width && x >= upperLeft.getX()) ) {
 			return true;
 		}
@@ -78,19 +86,13 @@ public class Rectangle {
 	}
 
 	public int getHeigth() {
-		return heigth;
+		return height;
 	}
 
-	public void setHeigth(int heigth) {
-		this.heigth = heigth;
+	public void setHeigth(int height) {
+		this.height = height;
 	}
 
-	public boolean isSelected() {
-		return selected;
-	}
-
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
+	
 	
 }

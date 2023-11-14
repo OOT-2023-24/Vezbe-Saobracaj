@@ -125,8 +125,8 @@ public class Main {
 		// 13-10 = 3 && 7-10=-3
 		System.out.println(p1.contains(14, 7));
 		
-		Donut d1 = new Donut();
-		System.out.println(d1.isSelected());
+		Donut d1 = new Donut(new Point(50,50),50,30);
+		System.out.println(d1.toString());
 	
 	}
 
