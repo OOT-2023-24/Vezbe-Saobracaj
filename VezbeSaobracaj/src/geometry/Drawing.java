@@ -16,7 +16,6 @@ public class Drawing extends JPanel {
 		frame.setSize(800, 600); // Dimenzije prozora
 		frame.setLocationRelativeTo(null); // Prozor ce biti centriran na ekranu
 		frame.setVisible(true); // Prozor ce biti vidljiv - obavezno
-
 	}
 	
 	public void paint(Graphics g) {

@@ -29,13 +29,14 @@ public class Rectangle extends Shape {
 		
 	}
 	
-	
-	public int area() {
-		return height*width;
+	@Override
+	public void moveBy(int byX, int byY) {
+		upperLeft.moveBy(byX, byY);
 	}
-	
-	public int circumference() {
-		return height*2 + width*2;
+
+	@Override
+	public void moveTo(int x, int y) {
+		upperLeft.moveTo(x, y);	
 	}
 	
 	@Override
@@ -43,6 +44,15 @@ public class Rectangle extends Shape {
 		return "Upper left point: (" +this.getUpperLeft().getX() + "," + 
 				this.getUpperLeft().getY() + "), width: " + this.getWidth() +
 				", height: " + this.getHeigth();
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Rectangle) {
+			Rectangle temp = (Rectangle) o;
+			return area() - temp.area();
+		}
+		return 0;
 	}
 	
 	@Override
@@ -68,6 +78,14 @@ public class Rectangle extends Shape {
 	public boolean contains(Point p) {
 		return contains(p.getX(), p.getY());
 	}
+	
+	public int area() {
+		return height*width;
+	}
+	
+	public int circumference() {
+		return height*2 + width*2;
+	}
 
 	public Point getUpperLeft() {
 		return upperLeft;
@@ -92,6 +110,8 @@ public class Rectangle extends Shape {
 	public void setHeigth(int height) {
 		this.height = height;
 	}
+
+	
 
 	
 	

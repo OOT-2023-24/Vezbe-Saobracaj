@@ -2,7 +2,9 @@ package vezbe;
 
 import geometry.Circle;
 import geometry.Donut;
+import geometry.Drawing;
 import geometry.Line;
+import geometry.Moveable;
 import geometry.Point;
 import geometry.Rectangle;
 
@@ -127,7 +129,7 @@ public class Main {
 		
 		Donut d1 = new Donut(new Point(50,50),50,30);
 		System.out.println(d1.toString());
-	
+		
 	}
 
 }
