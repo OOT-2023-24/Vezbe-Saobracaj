@@ -1,12 +1,10 @@
 package vezbe;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import geometry.Circle;
-import geometry.Donut;
-import geometry.Drawing;
-import geometry.Line;
-import geometry.Moveable;
 import geometry.Point;
-import geometry.Rectangle;
 
 public class Main {
 	
@@ -113,22 +111,61 @@ public class Main {
 //		System.out.println(l1.length());
 		
 		//VEZBE 4
-		Point p1 = new Point(10,10,true);
+		//Point p1 = new Point(10,10,true);
 		//System.out.println("x: " + p1.getX() + ", y: " + p1.getY() +
 				//", selected: " + p1.isSelected());
-		Point p2 = new Point(20,20,false);
-		Line l1 = new Line(p1,p2,false);
+		//Point p2 = new Point(20,20,false);
+		//Line l1 = new Line(p1,p2,false);
 		//System.out.println(l1.getEndPoint().getX());
-		Rectangle r1 = new Rectangle(new Point(50,50), 30, 30);
+		//Rectangle r1 = new Rectangle(new Point(50,50), 30, 30);
 		Circle c1 = new Circle(new Point(25,25),40);
 		
 		//System.out.println(p1.toString());
 		//System.out.println(p1);
 		// 13-10 = 3 && 7-10=-3
-		System.out.println(p1.contains(14, 7));
+		//System.out.println(p1.contains(14, 7));
 		
-		Donut d1 = new Donut(new Point(50,50),50,30);
-		System.out.println(d1.toString());
+		//Donut d1 = new Donut(new Point(50,50),50,30);
+		//System.out.println(d1.toString());
+		
+		// ---------- VEZBE 8 ------------
+//		int[] niz = new int[5];
+//		niz[0] = 4;
+//		niz[1] = 5;
+//		niz[2] = 6;
+//		niz[3] = 7;
+//		niz[4] = 8;
+		
+		//int[] drugiNiz = new int[] {4,5,6,7,8};
+		int[] drugiNiz = {4,5,6,7,8};
+		
+		for(int i = drugiNiz.length-1; i>=0; i--) {
+			System.out.print(drugiNiz[i] + " ");
+		}
+		
+		HashMap<String,String> openWith = new HashMap<String,String>();
+		openWith.put("txt", "notepad.exe");
+		openWith.put("bmp", "paint.exe");
+		openWith.put("dib", "paint.exe");
+		openWith.put("rtf", "wordpad.exe");
+		
+		for(Map.Entry<String, String> es: openWith.entrySet() ) {
+			System.out.println("\n" + es);
+		}
+		
+		
+		
+		try {
+			drugiNiz[5] = 25;
+		}catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		try {
+			c1.setRadius(0);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 	}
 
